@@ -1,0 +1,24 @@
+.hero {
+background-image: url("<%= asset_path('cafe.jpeg') %>");
+background-size:cover;
+position: relative;
+z-index: 0;
+overflow: hidden;
+}
+
+.hero:before{
+content: '';
+background: inherit;
+-webkit-filter: blur(5px);
+-moz-filter: blur(5px);
+-o-filter: blur(5px);
+-ms-filter: blur(5px);
+filter: blur(5px);
+position: absolute;
+top: -5px;
+left: -5px;
+right: -5px;
+bottom: -5px;
+z-index: -1;
+}
+
