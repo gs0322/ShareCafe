@@ -1,0 +1,55 @@
+/*背景画像*/
+.hero {
+background-image: url("<%= asset_path('cafe.jpeg') %>");
+background-size:cover;
+position: relative;
+z-index: 0;
+overflow: hidden;
+}
+
+/*背景画像ぼかし*/
+.hero:before{
+content: '';
+background: inherit;
+-webkit-filter: blur(5px);
+-moz-filter: blur(5px);
+-o-filter: blur(5px);
+-ms-filter: blur(5px);
+filter: blur(5px);
+position: absolute;
+top: -5px;
+left: -5px;
+right: -5px;
+bottom: -5px;
+z-index: -1;
+}
+
+/*タイトル*/
+.top-title{
+text-align: center;
+position: relative;
+font-size: 4rem;
+padding: 10rem;
+color: #fff;
+}
+
+
+/*logo*/
+.logo{
+text-align: center;
+background: rgba(0,0,0,0.3);
+color: #ffffff;
+font-size: 1.5rem;
+padding: 2rem 0;
+margin-top: 1rem;
+}
+
+/*ボタン*/
+.top-btn{
+position: absolute;
+bottom: 10rem;
+left: 50%;
+width: 100%;
+transform: translateX(-50%);
+text-align: center;
+}
