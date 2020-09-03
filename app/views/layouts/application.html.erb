@@ -2,24 +2,16 @@
 <html>
 <head>
 	<title>ShareCafe</title><%= csrf_meta_tags %><%= csp_meta_tag %>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#">ShareCafe</a> <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
-		<div class="collapse navbar-collapse d-lg-flex flex-row-reverse" id="navbarNav">
-			<ul class="navbar-nav">
-				<li><%=  link_to "", "#" ,  class:"fa fa-coffee coffee_black fa-2x"  %></li>
-				<li><%= link_to "", "#", class: "fa fa-users users_black fa-2x" %></li>
-				<li><%= link_to "新規登録", "#", class: " nav-link" %></li>
-				<li><%= link_to "ログイン", "#", class: " nav-link" %></li>
-			</ul>
-		</div>
-	</nav><%= yield %>
-	<footer class="footer">
-		<p>@ 2020 ShareCafe</p>
-	</footer>
+	<%= render 'partial/navbar' %>
+	
+	<%= yield %>
+	
+	<%= render 'partial/footer' %>
+
 </body>
 </html>
