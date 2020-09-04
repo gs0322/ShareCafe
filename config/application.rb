@@ -24,6 +24,7 @@ module ShareCafe
                         controller_specs: false,
                         request_specs: true,
                         system_specs: true
-    end
+                    end
+    
   end
 end
