@@ -25,6 +25,9 @@ module ShareCafe
                         request_specs: true,
                         system_specs: true
                     end
-    
+    # deviseno日本語化
+    config.i18n.default_locale = :ja
+    # 日本のタイムゾーン
+    config.time_zone = 'Asia/Tokyo'
   end
 end
