@@ -1,9 +1,13 @@
+<%= render 'partial/flash_messages' %>
 <div class="hero">
 		<h1 class="top-title">ShareCafe</h1>
 		<div class="logo">
 			<p>あなたのお気に入りのカフェを共有しよう</p>
 		</div>
+		<%unless user_signed_in? %>
 		<div class="top-btn">
-			<a class="btn btn-danger" href="">新規登録</a> <a class="btn btn-success" href="">ログイン</a>
+			<%= link_to "新規登録", new_user_registration_path, class: "btn btn-danger" %>
+			<%= link_to "ログイン", new_user_session_path, class: "btn btn-success " %>
 		</div>
+		<%end %>
 	</div>
