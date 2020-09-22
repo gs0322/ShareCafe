@@ -78,3 +78,7 @@ gem 'devise'
 # 日本語化
 gem 'devise-i18n'
 gem 'rails-i18n', '~> 5.1'
+
+#画像アップロード
+gem 'carrierwave'
+gem 'rmagick'

@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+    <% @posts.each do |post| %>
+        <div class="post-index-item">
+            <div class="post-user-name">
+                <p><%= post.user.name%></p>
+            </div>
+            <div class="post-img">
+                <%= image_tag post.img.url %>
+            </div>
+            <p class="post-title">
+                <%= post.title%>
+            </p>
+    <% end %>
+    </div>
+</div>
