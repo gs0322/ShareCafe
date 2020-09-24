@@ -82,3 +82,7 @@ gem 'rails-i18n', '~> 5.1'
 #画像アップロード
 gem 'carrierwave'
 gem 'rmagick'
+
+#ページネーション 
+gem 'kaminari', '~> 0.17.0'
+gem 'kaminari-bootstrap', '~> 3.0.1'

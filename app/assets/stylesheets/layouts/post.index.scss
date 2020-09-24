@@ -1,0 +1,17 @@
+/*ボックス*/
+.post-item {
+    margin: 2em auto;  
+    padding: 1em;
+    width: 90%; /*幅の調節*/
+    color: #666666; /*文字色*/
+    background-color: #f7f7f7; /*背景色*/
+    border: 2px solid #ccc; /*線の太さ・色*/
+    border-radius: 8px; /*角の丸み*/ 
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+/*画像中央*/
+.post-img {
+    text-align: center;
+}
+
