@@ -77,7 +77,7 @@ gem 'devise'
 
 # 日本語化
 gem 'devise-i18n'
-gem 'rails-i18n', '~> 5.1'
+gem 'rails-i18n'
 
 #画像アップロード
 gem 'carrierwave'
@@ -85,4 +85,3 @@ gem 'rmagick'
 
 #ページネーション 
 gem 'kaminari', '~> 0.17.0'
-gem 'kaminari-bootstrap', '~> 3.0.1'

@@ -3,6 +3,7 @@
 		<h2 class="new-title text-center">投稿フォーム</h2>
 		<div class="row">
 			<%= form_for @post, url: posts_create_path  do |f| %>
+			<%= render 'partial/error_messages', model: f.object %>
 			<div class="form-group">
 				<%= f.label :title, '店名(必須)30文字以内' %>
                 <%= f.text_field :title, class: 'form-control' %>

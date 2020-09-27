@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    models:
+      post: 
+    attributes:
+      post:
+        title: 店名 
+        text: レビュー
+        img: 画像
