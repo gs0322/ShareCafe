@@ -1,13 +1,11 @@
 .post-item {
-    margin: 2em auto;  
-    padding: 1em;
-    width: 90%; /*幅の調節*/
-    color: #666666; /*文字色*/
-    background-color: #f1f1f1; /*背景色*/
-    border: 2px solid #ccc; /*線の太さ・色*/
-    border-radius: 8px; /*角の丸み*/ 
-    margin-top: 50px;
-    margin-bottom: 30px;
+    margin: 2em auto; 
+ padding: 1em 1.5em;
+ width: 90%; /*幅の調節*/
+ color: #777777; /* 文字色 */
+ background-color: #FAEBD7; /* 背景色 */
+ border: 2px solid black; /*線の太さ・色*/
+ border-radius: 3em .8em 3em .7em/.9em 2em .8em 3em;
 }
 //画像中央
 .post-show-img{
