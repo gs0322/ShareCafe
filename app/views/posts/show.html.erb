@@ -3,7 +3,7 @@
 			<%= link_to "戻る", :back, class: "btn btn-outline-dark " %>
 		</div>
 		<div class="row">
-			<div class="post-item col-md-10 offset-md-1">
+			<div class="post-item col-md-8 offset-md-2">
 				<div class="post-show-name">
 					<%= @post.user.name%>
 				</div>
@@ -26,13 +26,12 @@
 					<%= image_tag @post.img.url %>
 				</div>
 				<div class="post-show-text">
-					<%= @post.text%>
+					<%=  simple_format (@post.text)%>
 				</div>
-				<div class="post-show-time">
-					<p><%= @post.created_at.strftime('%Y/%m/%d') %></p>
-				</div>
+				<div class="post-show-address">
 				<p>住所</p>
 				<p><%= @post.address %></p>
+				</div>
 				<div id="map"></div>
 				<script type="text/javascript">
 				function initMap() {
@@ -63,6 +62,9 @@
 			</script> 
 			<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
 			</script>
+			<div class="post-show-time">
+					<p><%= @post.created_at.strftime('%Y/%m/%d') %></p>
+			</div>
 		</div>
 	</div>
 </div>
