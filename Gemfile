@@ -19,7 +19,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-#gem 'turbolinks', '~> 5'
+# gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -61,7 +61,8 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+  # gem 'chromedriver-helper'
+  gem 'webdrivers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -79,14 +80,13 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'rails-i18n'
 
-#画像アップロード
+# 画像アップロード
 gem 'carrierwave'
 gem 'rmagick'
 
-#ページネーション 
+# ページネーション
 gem 'kaminari', '~> 0.17.0'
 
-#google map
-gem 'geocoder'
+# google map
 gem 'dotenv-rails'
-
+gem 'geocoder'

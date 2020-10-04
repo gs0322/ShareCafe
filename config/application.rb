@@ -29,7 +29,7 @@ module ShareCafe
     config.i18n.default_locale = :ja
     # 日本のタイムゾーン
     config.time_zone = 'Asia/Tokyo'
-    #Railsが自動挿入されないようにする
-    config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag }
+    # Railsが自動挿入されないようにする
+    config.action_view.field_error_proc = proc { |html_tag, _instance| html_tag }
   end
 end
