@@ -1,0 +1,70 @@
+<div class="container">
+		<div class="post-back">
+			<%= link_to "戻る", :back, class: "btn btn-outline-dark " %>
+		</div>
+		<div class="row">
+			<div class="post-item col-md-8 offset-md-2">
+				<div class="post-show-name">
+					<%= @post.user.name%>
+				</div>
+				<h2 class="post-show-title"><%= @post.title %></h2>
+				<h4 class="mb-3">評価：<%= @post.rate %>点</h4>
+				<div id="star-rate-<%= @post.id %>"></div>
+        <script>
+        $('#star-rate-<%= @post.id %>').raty({
+            size: 36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            starHalf: '<%= asset_path('star-half.png') %>',
+            half: true,
+            readOnly: true,
+            score: <%= @post.rate %>,
+        });
+        </script>  
+				
+				<div class="post-show-img">
+					<%= image_tag @post.img.url %>
+				</div>
+				<div class="post-show-text">
+					<%=  simple_format (@post.text)%>
+				</div>
+				<div class="post-show-address">
+				<p>住所</p>
+				<p><%= @post.address %></p>
+				</div>
+				<div id="map"></div>
+				<script type="text/javascript">
+				function initMap() {
+
+				var test = {lat: <%=@post.latitude%>, lng: <%=@post.longitude%>};
+				var map = new google.maps.Map(document.getElementById('map'), {
+				zoom: 15,
+				center: test
+				});
+				var transitLayer = new google.maps.TransitLayer();
+				transitLayer.setMap(map);
+
+				var contentString = '住所：<%= @post.address %>';
+				var infowindow = new google.maps.InfoWindow({
+				content: contentString
+				});
+
+				var marker = new google.maps.Marker({
+				position:test,
+				map: map,
+				title: contentString
+				});
+
+				marker.addListener('click', function() {
+				infowindow.open(map, marker);
+				});
+				}
+			</script> 
+			<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
+			</script>
+			<div class="post-show-time">
+					<p><%= @post.created_at.strftime('%Y/%m/%d') %></p>
+			</div>
+		</div>
+	</div>
+</div>

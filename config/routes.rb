@@ -10,4 +10,9 @@ Rails.application.routes.draw do
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
   end
+
+  get 'posts/index' => 'posts#index'
+  get 'posts/new' => 'posts#new'
+  post 'posts/create' => 'posts/create'
+  get 'posts/:id' => 'posts#show'
 end

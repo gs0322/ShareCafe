@@ -26,12 +26,24 @@
 	@extend .container-fluid;
 	max-width: 576px;
 	padding: 2rem;
-} // 「ログインしました」などのフラッシュ用スタイル
+} // アラートメッセージフラッシュ用スタイル
+.alert-alert {
+	@extend .alert-danger;
+}
 .alert-notice {
 	@extend .alert-info;
 }
-.alert-alert {
-	@extend .alert-danger;
+/*背景色*/
+body{
+	background-color: #e9e1d1;
+}
+
+/*挿入されたクラスのスタイルを編集*/
+.field_with_errors {
+	display: contents;
+	input {
+	@extend .is-invalid;
+	}
 }
 
 

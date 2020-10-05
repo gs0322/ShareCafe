@@ -25,9 +25,11 @@ module ShareCafe
                         request_specs: true,
                         system_specs: true
     end
-    # deviseの日本語化
+    # 日本語化
     config.i18n.default_locale = :ja
     # 日本のタイムゾーン
     config.time_zone = 'Asia/Tokyo'
+    # Railsが自動挿入されないようにする
+    config.action_view.field_error_proc = proc { |html_tag, _instance| html_tag }
   end
 end
