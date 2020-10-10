@@ -5,7 +5,8 @@
 		<div class="row">
 			<div class="post-item col-md-8 offset-md-2">
 				<div class="post-show-name">
-					<%= @post.user.name%>
+					<%= image_tag @post.user.img.url, :class => "post-user-icon" %> 
+					<%= link_to @post.user.name, "/users/#{@post.user.id}"     , class: " user-link" %>
 				</div>
 				<h2 class="post-show-title"><%= @post.title %></h2>
 				<h4 class="mb-3">評価：<%= @post.rate %>点</h4>

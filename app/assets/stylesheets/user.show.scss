@@ -27,10 +27,9 @@
     
 }
 //アイコン大きさ＆円形
-.icon {
-    max-width: 10rem;
-    max-height: 10rem;
-    border-radius: 50%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
+.profile-icon {
+    width: 180px;
+    height: 180px;
+    border-radius: 100px;
+    object-fit: cover;
 }

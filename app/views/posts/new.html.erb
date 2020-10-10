@@ -1,7 +1,8 @@
 <%= render 'partial/flash_messages' %>
-<div class="container col-md-3">
+<div class="container ">
 		<h2 class="new-title text-center">投稿フォーム</h2>
 		<div class="row">
+			<div class="post-new-item col-md-6 offset-md-3">
 			<%= form_for @post, url: posts_create_path  do |f| %>
 			<%= render 'partial/error_messages', model: f.object %>
 			<div class="form-group">
@@ -38,6 +39,7 @@ $('#star').raty({
 </div>  
             <%= f.submit '投稿', class: 'btn btn-outline-dark btn-block' %>
             <%end %>
+			</div>
 		</div>
 	</div>
 
