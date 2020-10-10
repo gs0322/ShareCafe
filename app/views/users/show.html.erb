@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class=" user-show-item col-md-8 offset-md-2">
+    
+   <div class="user-show-img">
+    <%= image_tag @user.img.url , :class => "icon" %>
+				</div>
+
+    <div class="user-show-name">
+    <h2> <%= @user.name %></h2>
+    </div>
+<div class="user-edit-btn">
+<%= link_to "アカウント編集",profile_edit_path ,  class: "btn btn-outline-dark "  %>
+</div>
+        </div>
+    </div>
+</div>

@@ -6,7 +6,7 @@
 				<li><%=  link_to "", posts_index_path ,  class:"fa fa-coffee coffee_black fa-2x"  %></li>
 				<li><%= link_to "", "#", class: "fa fa-users users_black fa-2x" %></li>
 				<li><%= link_to "投稿する", posts_new_path, class: " nav-link" %></li>
-				<li><%= link_to "マイページ", "#", class: " nav-link" %></li>
+				<li><%= link_to current_user.name, "/users/#{current_user.id}"     , class: " nav-link" %></li>
 				<li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
 			<%else %>
 				<li><%=  link_to "", posts_index_path ,  class:"fa fa-coffee coffee_black fa-2x"  %></li>

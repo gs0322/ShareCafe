@@ -1,0 +1,15 @@
+<%= form_for current_user, url: {action: 'profile_update'} do |f| %>
+ 
+ <div class="form-group">
+        <%= f.label :名前 %> <em>(8 文字以内)</em><br />
+        <%= f.text_field :name,  autofocus: true, maxlength: "8",autocomplete: "name",class: 'form-control' %>
+        </div>
+        <div class="form-group">
+        <%= f.label :img %>
+<%= f.file_field :img %>
+</div>
+ 
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
