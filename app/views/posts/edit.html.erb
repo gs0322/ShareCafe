@@ -1,10 +1,10 @@
 <%= render 'partial/flash_messages' %>
 <div class="container ">
-		<h2 class="new-title text-center">投稿フォーム</h2>
+		<h2 class="new-title text-center">投稿編集</h2>
 		<div class="row">
 			<div class="post-new-item col-md-6 offset-md-3">
-			<%= form_for @post, url: posts_create_path  do |f| %>
-			<%= render 'partial/error_messages', model: f.object %>
+                <%= form_for @post, url: { action: :update }  do |f| %>
+                <%= render 'partial/error_messages', model: f.object %>
 			<div class="form-group">
 				<%= f.label :title, '店名(必須)30文字以内' %>
                 <%= f.text_field :title, class: 'form-control' %>
@@ -42,5 +42,3 @@ $('#star').raty({
 			</div>
 		</div>
 	</div>
-
-	

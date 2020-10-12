@@ -10,7 +10,9 @@
     <h2> <%= @user.name %></h2>
     </div>
 <div class="user-edit-btn">
+ <% if current_user.id == @user.id   %>
 <%= link_to "アカウント編集",profile_edit_path ,  class: "btn btn-outline-dark "  %>
+ <% end %>
 </div>
         </div>
     </div>
@@ -18,7 +20,7 @@
     <div class="row">
     <% @user.posts.each do |post| %>
     <div class="post-item col-md-6 offset-md-3 "> 
-            <div class="post-user-name">
+           <div class="post-user-name">
                 <%= image_tag post.user.img.url, :class => "post-user-icon" %> 
                 <%= link_to post.user.name, "/users/#{post.user.id}"     , class: " user-link" %>
             </div>
@@ -47,6 +49,12 @@
             </div>
             <div class="post-time">
             <p><%= post.created_at.strftime('%Y/%m/%d') %></p>
+            </div>
+         <div class="post-edit-btn">
+         <% if user_signed_in? &&post.user_id == current_user.id %>
+            <%= link_to "編集", "/posts/#{post.id}/edit",  class: "btn btn-outline-dark " %>
+            <%= link_to "削除","/posts/#{post.id}/destroy",method:"post",  class: "btn btn-outline-dark ", data: { confirm: "削除しますか？" }  %>
+            <% end %>
             </div>
         </div>
     <% end %>
