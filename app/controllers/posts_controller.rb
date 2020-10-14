@@ -22,6 +22,27 @@ class PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
   end
 
+  def edit
+    @post = Post.find_by(id: params[:id])
+  end
+
+  def update
+    @post = Post.find_by(id: params[:id])
+    if @post.update(post_params)
+      redirect_to('/posts/index')
+    else
+      render action: :edit
+    end
+  end
+
+  def destroy
+    @post = Post.find_by(id: params[:id])
+
+    @post.destroy
+
+    redirect_to('/posts/index')
+  end
+
   private
 
     def post_params

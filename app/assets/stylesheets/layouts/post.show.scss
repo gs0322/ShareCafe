@@ -13,6 +13,9 @@ border-radius: 3em .8em 3em .7em/.9em 2em .8em 3em;
 //ユーザーネーム
 .post-show-name {
     font-size: 120%;
+    display:flex;/* flexbox */
+  justify-content:left; /* 水平方向 */
+  align-items: center; /* 垂直方向 */
 }
 
 //タイトル

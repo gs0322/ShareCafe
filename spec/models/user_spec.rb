@@ -45,4 +45,8 @@ RSpec.describe User, type: :model do
   it 'パスワードが６文字以上であれば登録できる' do
     expect(FactoryBot.build(:user, password: '123456')).to be_valid
   end
+
+  it '画像がjpg jpeg gif pngであれば投稿できる' do
+    expect(FactoryBot.build(:user, img: 'BAF4D34A-067A-4723-A794-8AFA9D9AD14C.jpg')).to be_valid
+  end
 end

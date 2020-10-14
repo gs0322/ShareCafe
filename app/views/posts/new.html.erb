@@ -1,7 +1,8 @@
 <%= render 'partial/flash_messages' %>
-<div class="container col-md-3">
+<div class="container ">
 		<h2 class="new-title text-center">投稿フォーム</h2>
 		<div class="row">
+			<div class="post-new-item col-md-6 offset-md-3">
 			<%= form_for @post, url: posts_create_path  do |f| %>
 			<%= render 'partial/error_messages', model: f.object %>
 			<div class="form-group">
@@ -14,10 +15,10 @@
 			</div>
 			<div class="form-group">
 				<%= f.label :img, '画像(必須)' %>
-                <%= f.file_field :img  %>
+                <%= f.file_field :img, accept: 'image/jpeg,image/gif,image/png,image/jpg'  %>
 			</div>
 			<div class="form-group row" id="star">
-    <%= f.label :rate,'評価 ', class:'col-md-3 col-form-label' %>
+    <%= f.label :rate,'評価(必須) ', class:'col-md-3 col-form-label' %>
     <%= f.hidden_field :rate, id: :review_star %>
 </div>
 
@@ -33,11 +34,12 @@ $('#star').raty({
 });
 </script>
 <div class="form-group">
-<%= f.label :住所 %>
+<%= f.label :'住所（必須)' %>
 <%= f.text_field :address,  class: 'form-control' %>
 </div>  
             <%= f.submit '投稿', class: 'btn btn-outline-dark btn-block' %>
             <%end %>
+			</div>
 		</div>
 	</div>
 

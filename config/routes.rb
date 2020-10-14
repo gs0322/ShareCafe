@@ -9,10 +9,17 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
+    get 'profile_edit', to: 'users/registrations#profile_edit', as: 'profile_edit'
+    patch 'profile_update', to: 'users/registrations#profile_update', as: 'profile_update'
   end
 
   get 'posts/index' => 'posts#index'
   get 'posts/new' => 'posts#new'
   post 'posts/create' => 'posts/create'
   get 'posts/:id' => 'posts#show'
+  get 'posts/:id/edit' => 'posts#edit'
+  patch 'posts/:id' => 'posts#update', as: 'post'
+  post 'posts/:id/destroy' => 'posts#destroy'
+
+  resources :users, only: [:show]
 end

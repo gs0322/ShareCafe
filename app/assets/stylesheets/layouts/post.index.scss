@@ -9,10 +9,27 @@
  border-radius: 3em .8em 3em .7em/.9em 2em .8em 3em;
 }
 
-//ユーザーネーム
+//投稿したユーザー画像
+.post-user-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+//ユーザーネームと画像
 .post-user-name {
     font-size: 120%;
     margin-bottom: 30px;
+    display:flex;/* flexbox */
+  justify-content:left; /* 水平方向 */
+  align-items: center; /* 垂直方向 */
+}
+//ユーザーネーム
+.user-link {
+    color:black;
+    margin-left: 10px;
 }
 
 //画像とボタン中央
