@@ -25,10 +25,6 @@ RSpec.describe Post, type: :model do
     expect(FactoryBot.build(:post, img: '')).to_not be_valid
   end
 
-  it '画像がjpg jpeg gif pngでなければ投稿できない' do
-    expect(FactoryBot.build(:post, img: 'BAF4D34A-067A-4723-A794-8AFA9D9AD14D.heic')).to_not be_valid
-  end
-
   it '評価がなければ投稿できない' do
     expect(FactoryBot.build(:post, rate: '')).to_not be_valid
   end

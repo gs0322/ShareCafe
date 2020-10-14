@@ -7,16 +7,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
-  def profile_edit
- 
-  end
- 
+  def profile_edit; end
+
   def profile_update
     current_user.assign_attributes(account_update_params)
     if current_user.save
-	  redirect_to root_path , notice: 'プロフィールを更新しました'
+      redirect_to posts_index_path, notice: 'プロフィールを更新しました'
     else
-      render "profile_edit"
+      render 'profile_edit'
     end
   end
 end

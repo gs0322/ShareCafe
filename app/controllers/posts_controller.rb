@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  
   def index
     @posts = Post.all.order(created_at: :desc).page(params[:page]).per(5)
   end
@@ -29,24 +28,20 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find_by(id: params[:id])
-    if @post.update_attributes(post_params)
-      redirect_to ("/posts/index") 
+    if @post.update(post_params)
+      redirect_to('/posts/index')
     else
       render action: :edit
     end
   end
 
   def destroy
-
     @post = Post.find_by(id: params[:id])
-  
-    @post.destroy
-  
-    redirect_to("/posts/index")
-  
-  end
 
-  
+    @post.destroy
+
+    redirect_to('/posts/index')
+  end
 
   private
 
@@ -54,4 +49,3 @@ class PostsController < ApplicationController
       params.require(:post).permit(:title, :text, :img, :rate, :address, :latitude, :longitude)
     end
 end
-

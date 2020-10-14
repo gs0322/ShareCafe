@@ -15,7 +15,7 @@
 			</div>
 			<div class="form-group">
 				<%= f.label :img, '画像(必須)' %>
-                <%= f.file_field :img  %>
+                <%= f.file_field :img, accept: 'image/jpeg,image/gif,image/png,image/jpg'  %>
 			</div>
 			<div class="form-group row" id="star">
     <%= f.label :rate,'評価(必須) ', class:'col-md-3 col-form-label' %>

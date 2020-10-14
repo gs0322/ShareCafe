@@ -2,8 +2,6 @@ Rails.application.routes.draw do
   # root（トップページ「/」）に訪れた際にtopコントローラーのindexアクションを実行
   root 'top#index'
 
-  
-  
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'
@@ -19,10 +17,9 @@ Rails.application.routes.draw do
   get 'posts/new' => 'posts#new'
   post 'posts/create' => 'posts/create'
   get 'posts/:id' => 'posts#show'
-  get "posts/:id/edit" => "posts#edit"
-  post "posts/:id/update" => "posts#update"
-  post "posts/:id/destroy" => "posts#destroy"
-  
+  get 'posts/:id/edit' => 'posts#edit'
+  patch 'posts/:id' => 'posts#update', as: 'post'
+  post 'posts/:id/destroy' => 'posts#destroy'
+
   resources :users, only: [:show]
-  
 end
