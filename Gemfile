@@ -85,7 +85,7 @@ gem 'carrierwave'
 gem 'rmagick'
 
 # ページネーション
-gem 'kaminari', '~> 0.17.0'
+gem 'kaminari', '~> 1.2.1'
 
 # google map
 gem 'dotenv-rails'
