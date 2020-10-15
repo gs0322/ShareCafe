@@ -1,0 +1,47 @@
+<%= render 'partial/flash_messages' %>
+<div class="container">
+<div class="search">
+<%= search_form_for @search, url: posts_index_path do |f| %>
+  <%= f.search_field :title_cont, placeholder: '店名を入力...', class: 'form-control' %>
+  <%= f.submit '検索', class: "btn btn-outline-dark " %>
+<% end %>
+</div>
+<div class="row">
+   <% @posts.each do |post| %>
+        <div class="post-item col-md-6 offset-md-3 "> 
+            
+            <div class="post-user-name">
+                <%= image_tag post.user.img.url, :class => "post-user-icon" %> 
+                <%= link_to post.user.name, "/users/#{post.user.id}"     , class: " user-link" %>
+            </div>
+            <div class="post-img">
+                <%= image_tag post.img.url %>
+            </div>
+            <div class="post-title">
+                <p><%= post.title%></p>
+            </div>
+            
+            <h4 class="mb-3">評価：<%= post.rate %>点 </h4>
+            <div id="star-rate-<%= post.id %>"></div>
+          <script>
+          $('#star-rate-<%= post.id %>').raty({
+            size: 36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            starHalf: '<%= asset_path('star-half.png') %>',
+            half: true,
+            readOnly: true,
+            score: <%= post.rate %>,
+          });
+          </script>  
+            <div class="post-btn">
+            <%= link_to "詳細画面へ", "/posts/#{post.id}", class: "btn btn-outline-dark " %>
+            </div>
+            <div class="post-time">
+            <p><%= post.created_at.strftime('%Y/%m/%d') %></p>
+            </div>
+        </div>
+    <% end %>
+    </div>
+    <%= paginate @posts %>
+</div>

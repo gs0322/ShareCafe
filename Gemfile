@@ -90,3 +90,6 @@ gem 'kaminari', '~> 0.17.0'
 # google map
 gem 'dotenv-rails'
 gem 'geocoder'
+
+# 投稿検索機能
+gem 'ransack'
