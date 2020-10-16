@@ -21,5 +21,5 @@ Rails.application.routes.draw do
   patch 'posts/:id' => 'posts#update', as: 'post'
   post 'posts/:id/destroy' => 'posts#destroy'
 
-  resources :users, only: [:show]
+  resources :users, only: %i[show index]
 end
