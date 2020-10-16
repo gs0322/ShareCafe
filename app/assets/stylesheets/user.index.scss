@@ -1,0 +1,32 @@
+//ボックス
+.user-index-item {
+    margin: 2em auto; 
+    padding: 1em 3em;
+    width: 90%; /*幅の調節*/
+    color: #777777; /* 文字色 */
+    background-color: #FAEBD7; /* 背景色 */
+    border: 2px solid black; /*線の太さ・色*/
+    border-radius: 3em .8em 3em .7em/.9em 2em .8em 3em;
+    margin-top: 50px;
+}
+
+//タイトル
+.user-index-title {
+    margin-top: 40px;
+}
+
+//アイコン大きさ＆円形
+.user-index-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    object-fit: cover;
+}
+//ユーザーネームと画像
+.user-index-name {
+    font-size: 30px;
+    margin-bottom: 30px;
+    display:flex;/* flexbox */
+  justify-content:left; /* 水平方向 */
+  align-items: center; /* 垂直方向 */
+}
