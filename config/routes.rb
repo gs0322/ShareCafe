@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'favorites/create'
+  get 'favorites/destroy'
   # root（トップページ「/」）に訪れた際にtopコントローラーのindexアクションを実行
   root 'top#index'
 
@@ -13,6 +15,8 @@ Rails.application.routes.draw do
     patch 'profile_update', to: 'users/registrations#profile_update', as: 'profile_update'
   end
 
+  
+
   get 'posts/index' => 'posts#index'
   get 'posts/new' => 'posts#new'
   post 'posts/create' => 'posts/create'
@@ -20,6 +24,10 @@ Rails.application.routes.draw do
   get 'posts/:id/edit' => 'posts#edit'
   patch 'posts/:id' => 'posts#update', as: 'post'
   post 'posts/:id/destroy' => 'posts#destroy'
+
+  resources :posts do
+    resource :favorites, only: [:create, :destroy]
+  end
 
   resources :users, only: %i[show index]
 end
