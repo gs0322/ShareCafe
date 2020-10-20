@@ -15,8 +15,6 @@ Rails.application.routes.draw do
     patch 'profile_update', to: 'users/registrations#profile_update', as: 'profile_update'
   end
 
-  
-
   get 'posts/index' => 'posts#index'
   get 'posts/new' => 'posts#new'
   post 'posts/create' => 'posts/create'
@@ -26,7 +24,7 @@ Rails.application.routes.draw do
   post 'posts/:id/destroy' => 'posts#destroy'
 
   resources :posts do
-    resource :favorites, only: [:create, :destroy]
+    resource :favorites, only: %i[create destroy]
   end
 
   resources :users, only: %i[show index]

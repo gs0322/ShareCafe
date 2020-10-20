@@ -6,7 +6,7 @@ class Post < ApplicationRecord
   validates :address, presence: true
 
   belongs_to :user
-  has_many :favorites 
+  has_many :favorites
   mount_uploader :img, ImgUploader
 
   geocoded_by :address

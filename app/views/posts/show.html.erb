@@ -29,6 +29,9 @@
 				<div class="post-show-text">
 					<%=  simple_format (@post.text)%>
 				</div>
+				<div id="favorites_buttons_<%= @post.id %>">
+            <%= render partial:'favorites/favorite', locals: { post: @post} %>
+			</div>
 				<div class="post-show-address">
 				<p>住所</p>
 				<p><%= @post.address %></p>
