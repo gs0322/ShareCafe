@@ -22,10 +22,12 @@ Rails.application.routes.draw do
   get 'posts/:id/edit' => 'posts#edit'
   patch 'posts/:id' => 'posts#update', as: 'post'
   post 'posts/:id/destroy' => 'posts#destroy'
-
+  
+  resources :users, only: %i[show index]
   resources :posts do
     resource :favorites, only: %i[create destroy]
+    resources :comments, only: [:create, :destroy]
   end
 
-  resources :users, only: %i[show index]
+  
 end
