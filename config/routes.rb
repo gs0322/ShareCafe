@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'favorites/create'
+  get 'favorites/destroy'
   # root（トップページ「/」）に訪れた際にtopコントローラーのindexアクションを実行
   root 'top#index'
 
@@ -20,6 +22,10 @@ Rails.application.routes.draw do
   get 'posts/:id/edit' => 'posts#edit'
   patch 'posts/:id' => 'posts#update', as: 'post'
   post 'posts/:id/destroy' => 'posts#destroy'
+
+  resources :posts do
+    resource :favorites, only: %i[create destroy]
+  end
 
   resources :users, only: %i[show index]
 end

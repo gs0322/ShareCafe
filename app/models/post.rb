@@ -6,8 +6,13 @@ class Post < ApplicationRecord
   validates :address, presence: true
 
   belongs_to :user
+  has_many :favorites
   mount_uploader :img, ImgUploader
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
+
+  def favorited_by?(user)
+    favorites.where(user_id: user.id).exists?
+  end
 end
