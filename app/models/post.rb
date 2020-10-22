@@ -7,6 +7,7 @@ class Post < ApplicationRecord
 
   belongs_to :user
   has_many :favorites
+  has_many :comments, dependent: :destroy
   mount_uploader :img, ImgUploader
 
   geocoded_by :address

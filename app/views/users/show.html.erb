@@ -12,6 +12,7 @@
 				</div>
 			</div>
 		</div>
+		<% if @user.posts.present?%>
 		<h2 class="user-show-post">投稿一覧</h2>
 		<div class="row">
 			<%@user.posts.each do |post| %>
@@ -50,6 +51,10 @@
 				<div class="post-edit-btn">
 					<%if user_signed_in? &&post.user_id == current_user.id %><%= link_to "編集", "/posts/#{post.id}/edit",  class: "btn btn-outline-dark " %><%= link_to "削除","/posts/#{post.id}/destroy",method:"post",  class: "btn btn-outline-dark ", data: { confirm: "削除しますか？" }  %><%end %>
 				</div>
-			</div><%end %>
+			</div>
+			<%end %>
+			<% else %>
+		<h2 class="user-show-post">投稿はまだありません</h2>
+		<%end %>
 		</div>
 	</div>
