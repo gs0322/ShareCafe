@@ -1,9 +1,19 @@
+<div class="comment-count">
+<%= comments.count %>件コメント
+</div>
 <% comments.each do |comment| %>
-    <% unless comment.id.nil? %>
-    <p><%= link_to "#{comment.user.name}さん", user_path(comment.user.id) %></p>
-    <p>コメント<%= comment.content %></p>
+<% unless comment.id.nil? %>
+    <div class="comment-contents">
+        <div class="comment-user-name">
+        <%= image_tag comment.user.img.url, :class => "comment-user-icon" %> 
+    <%= link_to "#{comment.user.name}さん", user_path(comment.user.id),class:"comment-user-name" %>
+    </div>
+    <div class="user-comment">
+    <%= comment.content %>
+    </div>
     <% if comment.user == current_user %>
-        <p><%= link_to 'コメントを削除する', post_comment_path(comment.post_id, comment.id), method: :delete, remote: true %></p>
+        <p><%= link_to '', post_comment_path(comment.post_id, comment.id), method: :delete, remote: true,class:"fas fa-trash-alt" , data: { confirm: "コメントを削除しますか？" } %></p>
     <% end %>
-<% end %>
+    </div>
+    <% end %>
 <% end %>

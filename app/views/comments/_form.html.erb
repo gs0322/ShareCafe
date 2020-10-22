@@ -1,8 +1,8 @@
-<%= form_with(model: [post, comment] ) do |form| %>
-  <div>
-    <%= form.text_area :content %>
-  </div>
-  <div class="actions">
-    <%= form.submit "コメントをする" %>
-  </div>
+<%= form_with(model: [post, comment] ) do |f| %>
+  <div class="form-area">
+  <div class="form-content">
+    <%= f.text_area :content , class: 'form-control'%>
+    </div>
+    <%= f.submit "コメントをする",  class: "btn btn-outline-dark " %>
+</div>
 <% end %>
