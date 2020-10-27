@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   patch 'posts/:id' => 'posts#update', as: 'post'
   post 'posts/:id/destroy' => 'posts#destroy'
 
-  resources :users, only: %i[show index]
+  resources :users, only: %i[show index ]
   resources :posts do
     resource :favorites, only: %i[create destroy]
     resources :comments, only: %i[create destroy]
