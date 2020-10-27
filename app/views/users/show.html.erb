@@ -12,49 +12,20 @@
 				</div>
 			</div>
 		</div>
-		<% if @user.posts.present?%>
-		<h2 class="user-show-post">投稿一覧</h2>
-		<div class="row">
-			<%@user.posts.each do |post| %>
-			<div class="post-item col-md-6 offset-md-3">
-				<div class="post-user-name">
-					<%= image_tag post.user.img.url, :class => "post-user-icon" %><%= link_to post.user.name, "/users/#{post.user.id}"     , class: " user-link" %>
-				</div>
-				<div class="post-img">
-					<%= image_tag post.img.url %>
-				</div>
-				<div class="post-title">
-					<p><%= post.title%></p>
-				</div>
-				<h4 class="mb-3">評価：<%= post.rate %>点</h4>
-				<div id="star-rate-<%= post.id %>"></div>
-				<script>
-                    $('#star-rate-<%= post.id %>').raty({
-                    size: 36,
-                    starOff:  '<%= asset_path('star-off.png') %>',
-                    starOn : '<%= asset_path('star-on.png') %>',
-                    starHalf: '<%= asset_path('star-half.png') %>',
-                    half: true,
-                    readOnly: true,
-                    score: <%= post.rate %>,
-                    });
-				</script>
-				<div class="post-btn">
-					<%= link_to "詳細画面へ", "/posts/#{post.id}", class: "btn btn-outline-dark " %>
-				</div>
-				<div id="favorites_buttons_<%= post.id %>">
-        <%= render partial:'favorites/favorite', locals: { post: post} %>
-				</div>
-				<div class="post-time">
-					<p><%= post.created_at.strftime('%Y/%m/%d') %></p>
-				</div>
-				<div class="post-edit-btn">
-					<%if user_signed_in? &&post.user_id == current_user.id %><%= link_to "編集", "/posts/#{post.id}/edit",  class: "btn btn-outline-dark " %><%= link_to "削除","/posts/#{post.id}/destroy",method:"post",  class: "btn btn-outline-dark ", data: { confirm: "削除しますか？" }  %><%end %>
-				</div>
+		<ul class="nav nav-pills nav-btn justify-content-center" role="tablist">
+			<li class="nav-item">
+				<a aria-controls="item1" aria-selected="true" class="nav-link active btn btn-outline-dark" data-toggle="tab" href="#item1" id="item1-tab" role="tab">投稿一覧</a>
+			</li>
+			<li class="nav-item-favorite">
+				<a aria-controls="item2" aria-selected="false" class="nav-link btn btn-outline-dark" data-toggle="tab" href="#item2" id="item2-tab" role="tab">お気に入り</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div aria-labelledby="item1-tab" class="tab-pane fade show active" id="item1" role="tabpanel">
+				<%= render partial: 'partial/user_post', locals: { user: @user} %>
 			</div>
-			<%end %>
-			<% else %>
-		<h2 class="user-show-post">投稿はまだありません</h2>
-		<%end %>
+			<div aria-labelledby="item2-tab" class="tab-pane fade" id="item2" role="tabpanel">
+				<%= render partial: 'partial/favorite_post', locals: { favorite_posts: @favorite_posts} %>
+			</div>
 		</div>
 	</div>

@@ -1,3 +1,4 @@
+//ボックス
 .user-show-item {
     margin: 2em auto; 
     padding: 1em 3em;
@@ -33,7 +34,7 @@
     border-radius: 100px;
     object-fit: cover;
 }
-
+//ユーザー投稿のタイトル
 .user-show-post {
     text-align: center;
     margin-top: 50px;
@@ -41,4 +42,16 @@
 //編集、削除ボタン
 .post-edit-btn {
     text-align: right;
+}
+//いいねした投稿タイトル
+.user-favorite-post {
+    margin-top: 50px;
+}
+//タブ
+.nav-btn {
+    margin-top: 50px;
+}
+//タブの位置
+.nav-item-favorite {
+    margin-left: 10px;
 }
