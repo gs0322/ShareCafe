@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  
-  
   root 'top#index'
 
   devise_for :users, controllers: {
@@ -14,12 +12,10 @@ Rails.application.routes.draw do
     patch 'profile_update', to: 'users/registrations#profile_update', as: 'profile_update'
   end
 
-  
   resources :users, only: %i[show index]
   resources :posts do
     resource :favorites, only: %i[create destroy]
     resources :comments, only: %i[create destroy]
   end
-  resources :maps, only: %i[ index]
- 
+  resources :maps, only: %i[index]
 end

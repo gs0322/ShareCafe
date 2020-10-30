@@ -1,5 +1,5 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-  before_action :correct_user, only: [:profile_edit, :profile_update]
+  before_action :correct_user, only: %i[profile_edit profile_update]
 
   def profile_edit; end
 
@@ -11,11 +11,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
       render 'profile_edit'
     end
   end
-  
+
   private
 
-  def correct_user
-    user = User.find_by(params[:id])
-    redirect_to root_url if current_user != user
-  end
+    def correct_user
+      user = User.find_by(params[:id])
+      redirect_to root_url if current_user != user
+    end
 end

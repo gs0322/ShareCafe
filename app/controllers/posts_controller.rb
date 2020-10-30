@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_search
-  before_action :authenticate_user!, only: [:new,:create,:edit,:update,:destroy]
+  before_action :authenticate_user!, only: %i[new create edit update destroy]
 
   def set_search
     @search = Post.ransack(params[:q])
@@ -53,7 +53,7 @@ class PostsController < ApplicationController
 
   private
 
-  def post_params
-    params.require(:post).permit(:title, :text, :img, :rate, :address, :latitude, :longitude)
-  end
+    def post_params
+      params.require(:post).permit(:title, :text, :img, :rate, :address, :latitude, :longitude)
+    end
 end

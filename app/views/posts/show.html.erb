@@ -80,11 +80,11 @@
 			
 			</div>
 		</div>
+		<% if user_signed_in? %>
 		<div class="row">
 			<div class="comment-item col-md-6 offset-md-3">
 			<h4 class="comment-form-title text-center">コメントを投稿</h4>
 		<div class="comment-form">
-		<% if user_signed_in? %>
 			<%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
 		<% end %>
 		</div>
