@@ -1,13 +1,14 @@
 class PostsController < ApplicationController
   before_action :set_search
+  before_action :authenticate_user!, only: %i[new create edit update destroy]
 
   def set_search
     @search = Post.ransack(params[:q])
-    @search_posts = @search.result(created_at: :desc).page(params[:page]).per(5)
+    @search_posts = @search.result.page(params[:page]).per(5)
   end
 
   def index
-    @posts = Post.all.order(created_at: :desc).page(params[:page]).per(5)
+    @posts = Post.includes(:user).all.page(params[:page]).per(5)
   end
 
   def new
@@ -18,7 +19,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
-      redirect_to posts_index_path, success: '投稿に成功しました！'
+      redirect_to posts_path, success: '投稿に成功しました！'
     else
       flash[:alert] = '投稿に失敗しました'
       render :new
@@ -38,7 +39,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find_by(id: params[:id])
     if @post.update(post_params)
-      redirect_to('/posts/index')
+      redirect_to posts_path, success: '投稿を編集しました！'
     else
       render action: :edit
     end
@@ -46,10 +47,8 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find_by(id: params[:id])
-
     @post.destroy
-
-    redirect_to('/posts/index')
+    redirect_to posts_path, success: '投稿を削除しました！'
   end
 
   private

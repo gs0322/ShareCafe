@@ -1,26 +1,23 @@
-<nav class="navbar nav fixed-top navbar-expand-lg navbar-light "style="background-color:#e9e1d1;">
-		<a class="navbar-brand" href="/">ShareCafe</a> <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
-		<div class="collapse navbar-collapse d-lg-flex flex-row-reverse" id="navbarNav">
-			<ul class="navbar-nav">
+<nav class="navbar nav fixed-top navbar-expand-lg navbar-light" style="background-color:#e9e1d1;">
+	<a class="navbar-brand" href="/">ShareCafe</a> <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+	<div class="collapse navbar-collapse d-lg-flex flex-row-reverse" id="navbarNav">
+		<ul class="navbar-nav">
 			<%if user_signed_in? %>
-				<li><%=  link_to "", posts_index_path ,  class:"fa fa-coffee coffee_black fa-2x"  %></li>
-				<li><%= link_to "地図から探す", maps_index_path, class: " nav-link" %></li>
-				<li><%= link_to "", users_path, class: "fa fa-users users_black fa-2x" %></li>
-				<li><%= link_to "投稿する", posts_new_path, class: " nav-link" %></li>
-				<li>
-				<div class="current-user-img ">
-				<%= image_tag current_user.img.url , :class => "navbar-icon" %> 
-				<%= link_to current_user.name, "/users/#{current_user.id}"     , class: " nav-link" %>
+			<li>
+				<div class="current-user-img">
+					<%= image_tag current_user.img.url , :class => "navbar-icon" %><%= link_to current_user.name, "/users/#{current_user.id}"     , class: "nav-link" %>
 				</div>
-				</li>
-				<li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
-			<%else %>
-				<li><%=  link_to "", posts_index_path ,  class:"fa fa-coffee coffee_black fa-2x"  %></li>
-				<li><%= link_to "地図から探す", maps_index_path, class: " nav-link" %></li>
-				<li><%= link_to "", users_path, class: "fa fa-users users_black fa-2x" %></li>
-				<li><%= link_to "新規登録", new_user_registration_path, class: " nav-link" %></li>
-				<li><%= link_to "ログイン", new_user_session_path, class: " nav-link" %></li>
-			<%end %>
-			</ul>
-		</div>
-	</nav>
+			</li>
+			<li><%=  link_to "投稿一覧", posts_path ,  class:"fa fa-coffee navbar_black "  %></li>
+			<li><%= link_to "地図から探す", maps_path, class: " fas fa-map-marked-alt navbar_black " %></li>
+			<li><%= link_to "登録者一覧", users_path, class: "fa fa-users navbar_black " %></li>
+			<li><%= link_to "投稿する", new_post_path, class: " fas fa-plus-square navbar_black " %></li>
+			<li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'fas fa-sign-out-alt navbar_black' %></li><%else %>
+			<li><%=  link_to "投稿一覧",  posts_path,  class:"fa fa-coffee navbar_black "  %></li>
+			<li><%= link_to "地図から探す", maps_path, class: " fas fa-map-marked-alt navbar_black " %></li>
+			<li><%= link_to "登録一覧", users_path, class: "fa fa-users navbar_black " %></li>
+			<li><%= link_to "新規登録", new_user_registration_path, class: " fas fa-user-plus navbar_black" %></li>
+			<li><%= link_to "ログイン", new_user_session_path, class: " fas fa-sign-in-alt navbar_black" %></li><%end %>
+		</ul>
+	</div>
+</nav>

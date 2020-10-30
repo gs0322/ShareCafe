@@ -1,46 +1,33 @@
-<%= render 'partial/flash_messages' %>
-<div class="container ">
-		<h2 class="new-title text-center">投稿フォーム</h2>
-		<div class="row">
-			<div class="post-new-item col-md-6 offset-md-3">
-			<%= form_for @post, url: posts_create_path  do |f| %>
-			<%= render 'partial/error_messages', model: f.object %>
+<div class="container">
+	<h2 class="new-title text-center">投稿フォーム</h2>
+	<div class="row">
+		<div class="post-new-item col-md-6 offset-md-3">
+			<%= form_for (@post)  do |f| %><%= render 'partial/error_messages', model: f.object %>
 			<div class="form-group">
-				<%= f.label :title, '店名(必須)30文字以内' %>
-                <%= f.text_field :title, class: 'form-control' %>
+				<%= f.label :title, '店名(必須)30文字以内' %><%= f.text_field :title, class: 'form-control' %>
 			</div>
 			<div class="form-group">
-				<%= f.label :text, 'レビュー(必須)200文字以内' %>
-                <%= f.text_area :text, class: 'form-control', rows:10 %>
+				<%= f.label :text, 'レビュー(必須)200文字以内' %><%= f.text_area :text, class: 'form-control', rows:10 %>
 			</div>
 			<div class="form-group">
-				<%= f.label :img, '画像(必須)' %>
-                <%= f.file_field :img, accept: 'image/jpeg,image/gif,image/png,image/jpg'  %>
+				<%= f.label :img, '画像(必須)' %><%= f.file_field :img, accept: 'image/jpeg,image/gif,image/png,image/jpg'  %>
 			</div>
 			<div class="form-group row" id="star">
-    <%= f.label :rate,'評価(必須) ', class:'col-md-3 col-form-label' %>
-    <%= f.hidden_field :rate, id: :review_star %>
-</div>
-
-<!-- 評価javascript -->
-<script>
-$('#star').raty({
-    size     : 36,
-    starOff:  '<%= asset_path('star-off.png') %>',
-    starOn : '<%= asset_path('star-on.png') %>',
-    starHalf: '<%= asset_path('star-half.png') %>',
-    scoreName: 'post[rate]',
-    half: true,
-});
-</script>
-<div class="form-group">
-<%= f.label :'住所（必須)' %>
-<%= f.text_field :address,  class: 'form-control' %>
-</div>  
-            <%= f.submit '投稿', class: 'btn btn-outline-dark btn-block' %>
-            <%end %>
+				<%= f.label :rate,'評価(必須) ', class:'col-md-3 col-form-label' %><%= f.hidden_field :rate, id: :review_star %>
 			</div>
+			<script>
+			$('#star').raty({
+			 size     : 36,
+			 starOff:  '<%= asset_path('star-off.png') %>',
+			 starOn : '<%= asset_path('star-on.png') %>',
+			 starHalf: '<%= asset_path('star-half.png') %>',
+			 scoreName: 'post[rate]',
+			 half: true,
+			});
+			</script>
+			<div class="form-group">
+				<%= f.label :'住所（必須)' %><%= f.text_field :address,  class: 'form-control' %>
+			</div><%= f.submit '投稿', class: 'btn btn-outline-dark btn-block' %><%end %>
 		</div>
 	</div>
-
-	
+</div>
