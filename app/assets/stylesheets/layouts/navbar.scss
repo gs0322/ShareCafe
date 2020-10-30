@@ -1,5 +1,4 @@
-
-/*ナビゲーションバー */
+//ナビゲーションバー 
 .navbar {
     border-bottom: 5px solid rgba(0, 0, 0, .0975);
     height: 77px;
@@ -9,17 +8,14 @@
         &:first-child {
         margin-left: 0;
         }
-        .coffee_black {
-            color:#000000;	
-        }
-        .users_black {
-            color:#000000;	
+        .navbar_black {
+            color:#000000;
+            padding-top: 14px;	
         }
     }
     }
 }
-
-/*要素を下にずらすために*/
+//要素を下にずらすために
 body{ 
     padding-top: 70px; 
 }
@@ -28,8 +24,8 @@ body{
     width: 80px;
     height: 40px;
     display:flex;/* flexbox */
-  justify-content:center; /* 水平方向 */
-  align-items: center; /* 垂直方向 */
+    justify-content:center; /* 水平方向 */
+    align-items: center; /* 垂直方向 */
 }
 //ユーザー画像
 .navbar-icon {

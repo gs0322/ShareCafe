@@ -3,24 +3,22 @@
     margin-top: 40px;
     text-align: center;
 }
-
 //検索できなかった時
 .search-error  {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 30px;
 }
-
 //ボックス
 .post-item {
     margin: 2em auto; 
- padding: 1em 3em;
- width: 90%; /*幅の調節*/
- color: #777777; /* 文字色 */
- background-color:  #FAEBD7; /* 背景色 */
- border: 2px solid black; /*線の太さ・色*/
- border-radius: 3em .8em 3em .7em/.9em 2em .8em 3em;
+    padding: 1em 3em;
+    width: 90%; /*幅の調節*/
+    color: #777777; /* 文字色 */
+    background-color:  #FAEBD7; /* 背景色 */
+    border: 2px solid black; /*線の太さ・色*/
+    border-radius: 3em .8em 3em .7em/.9em 2em .8em 3em;
 }
-
 //投稿したユーザー画像
 .post-user-icon {
     width: 60px;
@@ -29,21 +27,19 @@
     object-fit: cover;
     margin-bottom: 20px;
 }
-
 //ユーザーネームと画像
 .post-user-name {
     font-size: 120%;
     margin-bottom: 30px;
     display:flex;/* flexbox */
-  justify-content:left; /* 水平方向 */
-  align-items: center; /* 垂直方向 */
+    justify-content:left; /* 水平方向 */
+    align-items: center; /* 垂直方向 */
 }
 //ユーザーネーム
 .user-link {
     color:black;
     margin-left: 10px;
 }
-
 //画像とボタン中央
 .post-img,.post-btn,{
     text-align: center;

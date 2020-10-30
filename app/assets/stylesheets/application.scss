@@ -19,14 +19,13 @@
 
 @import "bootstrap";
 
-@import "layouts/navbar";
-
 // ログイン画面
 .container-login {
 	@extend .container-fluid;
 	max-width: 576px;
 	padding: 2rem;
-} // アラートメッセージフラッシュ用スタイル
+}
+// アラートメッセージフラッシュ用スタイル
 .alert-alert {
 	@extend .alert-danger;
 }
@@ -37,13 +36,41 @@
 body{
 	background-color: #e9e1d1;
 }
-
 /*挿入されたクラスのスタイルを編集*/
 .field_with_errors {
 	display: contents;
 	input {
 	@extend .is-invalid;
 	}
+}
+//ページネーション 
+.pagination > li > a
+{
+    background-color: white;
+    color: black;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover
+{
+    color: #5a5a5a;
+    background-color: #eee;
+    border-color: #ddd;
+}
+
+.pagination > .active > a
+{
+    color: white;
+    background-color: black !Important;
+    border: solid 1px black !Important;
+}
+
+.pagination > .active > a:hover
+{
+    background-color: black !Important;
+    border: solid 1px black;
 }
 
 

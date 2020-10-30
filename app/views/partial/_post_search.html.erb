@@ -1,9 +1,13 @@
 <%= render 'partial/flash_messages' %>
 <div class="container">
-<div class="search">
-<%= search_form_for @search, url: posts_index_path do |f| %>
-  <%= f.search_field :title_cont, placeholder: '店名を入力...' %>
-  <%= f.submit '検索' , class: "btn btn-outline-dark "%>
+<div class="map-search col-md-4 offset-md-4 ">
+<%= search_form_for @search, url: posts_path do |f| %>
+  <div class="search-form">
+  <%= f.search_field :title_cont, placeholder: '店名を検索...', class: 'form-control' %>
+  </div>
+  <div class=search-btn>
+  <%= f.submit '検索', class: "btn btn-outline-dark " %>
+</div>
 <% end %>
 </div>
 <div class="row">
@@ -35,7 +39,7 @@
           });
           </script>  
             <div class="post-btn">
-            <%= link_to "詳細画面へ", "/posts/#{post.id}", class: "btn btn-outline-dark " %>
+            <%= link_to "詳細画面を表示", "/posts/#{post.id}", class: "btn btn-outline-dark " %>
             </div>
             <div id="favorites_buttons_<%= post.id %>">
              <%= render partial:'favorites/favorite', locals: { post: post} %>
