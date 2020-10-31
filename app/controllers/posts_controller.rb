@@ -4,11 +4,11 @@ class PostsController < ApplicationController
 
   def set_search
     @search = Post.ransack(params[:q])
-    @search_posts = @search.result.page(params[:page]).per(5)
+    @search_posts = @search.result.order(created_at: :desc).page(params[:page]).per(5)
   end
 
   def index
-    @posts = Post.includes(:user).all.page(params[:page]).per(5)
+    @posts = Post.includes(:user).all.order(created_at: :desc).page(params[:page]).per(5)
   end
 
   def new
@@ -29,7 +29,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find_by(id: params[:id])
     @comment = Comment.new
-    @comments = @post.comments.order(created_at: :desc)
+    @comments = @post.comments
   end
 
   def edit

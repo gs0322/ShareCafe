@@ -14,8 +14,9 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[show index]
   resources :posts do
-    resource :favorites, only: %i[create destroy]
+    resources :favorites, only: %i[create destroy]
     resources :comments, only: %i[create destroy]
   end
   resources :maps, only: %i[index]
+  resources :ranks, only: %i[index]
 end
