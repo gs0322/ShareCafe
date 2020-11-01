@@ -20,4 +20,3 @@ Rails.application.routes.draw do
   resources :maps, only: %i[index]
   resources :ranks, only: %i[index]
 end
-
