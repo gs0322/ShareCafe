@@ -18,4 +18,5 @@ Rails.application.routes.draw do
     resources :comments, only: %i[create destroy]
   end
   resources :maps, only: %i[index]
+  resources :ranks, only: %i[index]
 end
