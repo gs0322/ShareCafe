@@ -66,6 +66,7 @@
 			</script> 
 			<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
 			</script>
+			<%= render_with_hashtags(@post.hashbody) %>
 			<div class="post-show-time">
 					<p><%= @post.created_at.strftime('%Y/%m/%d') %></p>
 			</div>

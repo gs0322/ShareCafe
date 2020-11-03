@@ -51,9 +51,20 @@ class PostsController < ApplicationController
     redirect_to posts_path, success: '投稿を削除しました！'
   end
 
+  def hashtag
+    @user = current_user
+    if params[:name].nil?
+      @hashtags = Hashtag.all.to_a.group_by{ |hashtag| hashtag.posts.count}
+    else
+      @hashtag = Hashtag.find_by(hashname: params[:name])
+      @post = @hashtag.posts.page(params[:page]).per(20).reverse_order
+      @hashtags = Hashtag.all.to_a.group_by{ |hashtag| hashtag.posts.count}
+    end
+  end
+
   private
 
     def post_params
-      params.require(:post).permit(:title, :text, :img, :rate, :address, :latitude, :longitude)
+      params.require(:post).permit(:title, :text, :img, :rate, :address, :latitude, :longitude, :hashbody, hashtag_ids: [])
     end
 end
