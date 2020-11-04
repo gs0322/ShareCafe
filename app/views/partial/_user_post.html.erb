@@ -1,18 +1,18 @@
 <h2 class="user-show-post">ユーザーの投稿<%= user.posts.count %>件</h2>
-		<div class="row">
-			<%user.posts.each do |post| %>
-			<div class="post-item col-md-6 offset-md-3">
-			<div class="post-user-name">
-				<%= image_tag post.user.img.url, :class => "post-user-icon" %><%= link_to post.user.name, "/users/#{post.user.id}"     , class: " user-link" %>
-			</div>
-			<div class="post-img">
-				<%= image_tag post.img.url %>
-			</div>
-			<div class="post-title">
-				<p><%= post.title%></p>
-			</div>
-			 <h4 class="mb-3">評価：<%= post.rate %>点 </h4>
-            <div id="star-rate-<%= post.id %>"></div>
+<div class="row">
+	<%user.posts.each do |post| %>
+	<div class="post-item col-md-6 offset-md-3">
+		<div class="post-user-name">
+			<%= image_tag post.user.img.url, :class => "post-user-icon" %><%= link_to post.user.name, "/users/#{post.user.id}"     , class: " user-link" %>
+		</div>
+		<div class="post-img">
+			<%= image_tag post.img.url %>
+		</div>
+		<div class="post-title">
+			<p><%= post.title%></p>
+		</div>
+		<h4 class="mb-3">評価：<%= post.rate %>点</h4>
+		<div id="star-rate-<%= post.id %>"></div>
           <script>
           $('#star-rate-<%= post.id %>').raty({
             size: 36,
@@ -24,20 +24,20 @@
             score: <%= post.rate %>,
           });
           </script>  
-			<div class="post-btn">
-				<%= link_to "詳細画面へ", "/posts/#{post.id}", class: "btn btn-outline-dark " %>
-			</div>
-			<div id="favorites_buttons_&lt;%= post.id %&gt;">
-				<%= render partial:'favorites/favorite', locals: { post: post} %>
-			</div>
-			<div class="hashname text-right">
+		<div class="post-btn">
+			<%= link_to "詳細画面へ", "/posts/#{post.id}", class: "btn btn-outline-dark " %>
+		</div>
+		<div id="favorites_buttons_&lt;%= post.id %&gt;">
+			<%= render partial:'favorites/favorite', locals: { post: post} %>
+		</div>
+		<div class="hashname text-right">
 			<%= render_with_hashtags(post.hashbody) %>
-			</div>
-			<div class="post-time">
-				<p><%= post.created_at.strftime('%Y/%m/%d') %></p>
-			</div>
-			<div class="post-edit-btn">
-				<%if user_signed_in? &&post.user_id == current_user.id %><%= link_to "編集", "/posts/#{post.id}/edit",  class: "btn btn-outline-dark " %><%= link_to "削除","/posts/#{post.id}",method:"delete",  class: "btn btn-outline-dark ", data: { confirm: "削除しますか？" }  %><%end %>
-			</div>
-		</div><%end %>
-	</div>
+		</div>
+		<div class="post-time">
+			<p><%= post.created_at.strftime('%Y/%m/%d') %></p>
+		</div>
+		<div class="post-edit-btn">
+			<%if user_signed_in? &&post.user_id == current_user.id %><%= link_to "編集", "/posts/#{post.id}/edit",  class: "btn btn-outline-dark " %><%= link_to "削除","/posts/#{post.id}",method:"delete",  class: "btn btn-outline-dark ", data: { confirm: "削除しますか？" }  %><%end %>
+		</div>
+	</div><%end %>
+</div>

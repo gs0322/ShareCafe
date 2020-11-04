@@ -1,5 +1,15 @@
 /*タイトル下げる*/
 .new-title {
-    margin-top: 100px;
+    margin-top: 20px;
     margin-bottom:30px;
+}
+//ボックス
+.post-new-item {
+    margin-top: 60px;
+    padding: 1em;
+    width: 90%; /* ボックス幅 */
+    background-color: #e6dcd8; /* ボックス背景色 */
+    color: #666; /* 文章色 */
+    box-shadow: 0 0 5px 1px #c0c0c0; /* 影 */
+    border-radius: 10px; /* 角の丸み */
 }

@@ -9,7 +9,7 @@
 				</div>
 			</li>
 			<li><%=  link_to "人気ランキング", ranks_path ,  class:"fas fa-crown navbar_black "  %></li>
-			<li><%=  link_to "ハッシュタグ", post_hashtag_path ,  class:"fas fa-tags navbar_black "  %></li>
+			<li><%=  link_to "タグから探す", post_hashtag_path ,  class:"fas fa-tags navbar_black "  %></li>
 			<li><%=  link_to "投稿一覧", posts_path ,  class:"fa fa-coffee navbar_black "  %></li>
 			<li><%= link_to "地図から探す", maps_path, class: " fas fa-map-marked-alt navbar_black " %></li>
 			<li><%= link_to "登録者一覧", users_path, class: "fa fa-users navbar_black " %></li>
@@ -18,10 +18,10 @@
 			<%else %>
 			
 			<li><%=  link_to "人気ランキング", ranks_path ,  class:"fas fa-crown navbar_black "  %></li>
-			<li><%=  link_to "ハッシュタグから探す", post_hashtag_path ,  class:"fas fa-tags navbar_black "  %></li>
+			<li><%=  link_to "タグから探す", post_hashtag_path ,  class:"fas fa-tags navbar_black "  %></li>
 			<li><%=  link_to "投稿一覧",  posts_path,  class:"fa fa-coffee navbar_black "  %></li>
 			<li><%= link_to "地図から探す", maps_path, class: " fas fa-map-marked-alt navbar_black " %></li>
-			<li><%= link_to "登録一覧", users_path, class: "fa fa-users navbar_black " %></li>
+			<li><%= link_to "登録者一覧", users_path, class: "fa fa-users navbar_black " %></li>
 			<li><%= link_to "新規登録", new_user_registration_path, class: " fas fa-user-plus navbar_black" %></li>
 			<li><%= link_to "ログイン", new_user_session_path, class: " fas fa-sign-in-alt navbar_black" %></li><%end %>
 		</ul>
