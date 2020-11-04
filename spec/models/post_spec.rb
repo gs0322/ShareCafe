@@ -32,4 +32,8 @@ RSpec.describe Post, type: :model do
   it '住所がなければ投稿できない' do
     expect(FactoryBot.build(:post, address: '')).to_not be_valid
   end
+
+  it 'ハッシュタグがなくても投稿できる' do
+    expect(FactoryBot.build(:post, hashbody: '')).to be_valid
+  end
 end

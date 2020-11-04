@@ -20,7 +20,7 @@ class Post < ApplicationRecord
 
   has_many :hashtag_posts, dependent: :destroy
   has_many :hashtags, through: :hashtag_posts
-  
+
   after_create do
     post = Post.find_by(id: id)
     hashtags = hashbody.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
@@ -29,7 +29,7 @@ class Post < ApplicationRecord
       post.hashtags << tag
     end
   end
-  
+
   before_update do
     post = Post.find_by(id: id)
     post.hashtags.clear

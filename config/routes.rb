@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   end
   resources :maps, only: %i[index]
   resources :ranks, only: %i[index]
-  
+
   get '/post/hashtag/:name' => 'posts#hashtag'
   get '/post/hashtag' => 'posts#hashtag'
 end
