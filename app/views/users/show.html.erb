@@ -8,7 +8,9 @@
 				<h2><%= @user.name %></h2>
 			</div>
 			<div class="user-edit-btn">
-				<%if user_signed_in? && current_user.id == @user.id   %><%= link_to "アカウント編集",profile_edit_path ,  class: "btn btn-outline-dark "  %><%end %>
+				<%if user_signed_in? && current_user.id == @user.id   %>
+				<%= link_to "アカウント編集",profile_edit_path ,  class: "btn btn-outline-dark "  %>
+				<%end %>
 			</div>
 		</div>
 	</div>
