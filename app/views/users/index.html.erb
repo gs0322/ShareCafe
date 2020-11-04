@@ -1,11 +1,13 @@
 <div class="container">
 	<h1 class="user-index-title  text-center">登録者一覧</h1>
 	<div class="row">
-		<div class="user-index-item col-md-4 offset-md-4">
+		<div class="user-index-item col-md-6 offset-md-3">
 			<%@users.each do |user| %>
-             <div class="user-index-name">
+             <div class="user-group">
+			 <div class="user-index-name">
 				<%= image_tag user.img.url , :class => "user-index-icon" %>
 				<%= link_to user.name, "/users/#{user.id}", class: " user-link" %>
+			</div>
 			</div>
 		<% end%>
         </div>

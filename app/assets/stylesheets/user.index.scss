@@ -28,3 +28,8 @@
     justify-content:left; /* 水平方向 */
     align-items: center; /* 垂直方向 */
 }
+.user-group {
+    display: inline-flex;
+    margin: 5px;
+    padding: 10px;
+}

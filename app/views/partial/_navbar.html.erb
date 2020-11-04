@@ -9,14 +9,16 @@
 				</div>
 			</li>
 			<li><%=  link_to "人気ランキング", ranks_path ,  class:"fas fa-crown navbar_black "  %></li>
+			<li><%=  link_to "ハッシュタグ", post_hashtag_path ,  class:"fas fa-tags navbar_black "  %></li>
 			<li><%=  link_to "投稿一覧", posts_path ,  class:"fa fa-coffee navbar_black "  %></li>
 			<li><%= link_to "地図から探す", maps_path, class: " fas fa-map-marked-alt navbar_black " %></li>
 			<li><%= link_to "登録者一覧", users_path, class: "fa fa-users navbar_black " %></li>
-			<li><%= link_to "投稿する", new_post_path, class: " fas fa-plus-square navbar_black " %></li>
+			<li><%= link_to "投稿する", new_post_path, class: " fas fa-edit navbar_black " %></li>
 			<li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'fas fa-sign-out-alt navbar_black' %></li>
 			<%else %>
 			
 			<li><%=  link_to "人気ランキング", ranks_path ,  class:"fas fa-crown navbar_black "  %></li>
+			<li><%=  link_to "ハッシュタグから探す", post_hashtag_path ,  class:"fas fa-tags navbar_black "  %></li>
 			<li><%=  link_to "投稿一覧",  posts_path,  class:"fa fa-coffee navbar_black "  %></li>
 			<li><%= link_to "地図から探す", maps_path, class: " fas fa-map-marked-alt navbar_black " %></li>
 			<li><%= link_to "登録一覧", users_path, class: "fa fa-users navbar_black " %></li>

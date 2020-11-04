@@ -1,6 +1,5 @@
 <div class="container">
 <h2 class="hash-title text-center">ハッシュタグ一覧</h2>
-<h3 class="search-title">#<%= @hashtag.hashname %>:  <%= @post.count %> 件 </h3>
 <div class="row">
     <% if params[:name] == nil %>
 <% else %>
@@ -36,6 +35,9 @@
             <div id="favorites_buttons_<%= post.id %>">
              <%= render partial:'favorites/favorite', locals: { post: post} %>
           </div>
+          <div class="hashname text-right">
+          <%= render_with_hashtags(post.hashbody) %>
+          </div>
             <div class="post-time">
             <p><%= post.created_at.strftime('%Y/%m/%d') %></p>
             </div>
@@ -44,12 +46,14 @@
 <% end %>
     </div>
     <div class="row">
-       <div class="post-item col-md-6 offset-md-3 "> 
+       <div class="post-item col-md-8 offset-md-2 "> 
            <% @hashtags.sort.reverse.each do |count| %>
                 <% count[1].each do |hashtag| %>
-                    
+                   <div class="hashgroup">
+                    <div class="hashname">
                     <%= link_to  "##{hashtag.hashname} (#{hashtag.posts.count}) 件","/post/hashtag/#{hashtag.hashname}",data: {"turbolinks" => false} %>
-                        
+                     </div> 
+                     </div>  
                     <% end %>
                 <% end %>
             
