@@ -2,9 +2,9 @@
 	<div class="profile-back">
 		<%= link_to "戻る", :back, class: "btn btn-outline-dark " %>
 	</div>
-	<h2 class="profile-edit-title text-center">プロフィール編集</h2>
 	<div class="row">
-		<div class="profile-edit-item col-md-4 offset-md-4">
+		<div class="profile-edit-item col-md-6 offset-md-3">
+		<h2 class="profile-edit-title text-center">プロフィール編集</h2>
 			<%= form_for current_user, url: {action: 'profile_update'} do |f| %><%= render 'partial/error_messages', model: f.object %>
 			<div class="form-group">
 				<%= f.label :名前 %><em>(8 文字以内)</em><br>

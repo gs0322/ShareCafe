@@ -1,9 +1,19 @@
-/*タイトル下げる*/
+//タイトル下げる
 .profile-edit-title {
-    margin-top: 100px;
+    margin-top: 20px;
     margin-bottom:30px;
 }
 //戻るボタン
 .profile-back {
     margin-top: 50px;
+}
+//ボックス
+.profile-edit-item {
+    margin-top: 30px;
+    padding: 1em;
+    width: 90%; /* ボックス幅 */
+    background-color: #e6dcd8; /* ボックス背景色 */
+    color: #666; /* 文章色 */
+    box-shadow: 0 0 5px 1px #c0c0c0; /* 影 */
+    border-radius: 10px; /* 角の丸み */
 }

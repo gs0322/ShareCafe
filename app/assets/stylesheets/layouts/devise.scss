@@ -12,4 +12,14 @@
 .btn-success ,.btn-danger{
     margin-bottom: 10px;
 }
+//ボックス
+.container-login {
+    margin-top: 60px;
+    padding: 1em;
+    width: 90%; /* ボックス幅 */
+    background-color: #e6dcd8; /* ボックス背景色 */
+    color: #666; /* 文章色 */
+    box-shadow: 0 0 5px 1px #c0c0c0; /* 影 */
+    border-radius: 10px; /* 角の丸み */
+}
 

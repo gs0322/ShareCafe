@@ -13,18 +13,18 @@
 				<p><%= post.title%></p>
 			</div>
 			<h4 class="mb-3">評価：<%= post.rate %>点</h4>
-			<div id="star-rate-&lt;%= post.id %&gt;"></div>
-			<script>
-			       $('#star-rate-<%= post.id %>').raty({
-			         size: 36,
-			         starOff:  '<%= asset_path('star-off.png') %>',
-			         starOn : '<%= asset_path('star-on.png') %>',
-			         starHalf: '<%= asset_path('star-half.png') %>',
-			         half: true,
-			         readOnly: true,
-			         score: <%= post.rate %>,
-			       });
-			</script>
+			 <div id="star-rate-<%= post.id %>"></div>
+          <script>
+          $('#star-rate-<%= post.id %>').raty({
+            size: 36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            starHalf: '<%= asset_path('star-half.png') %>',
+            half: true,
+            readOnly: true,
+            score: <%= post.rate %>,
+          });
+          </script>  
 			<div class="post-btn">
 				<%= link_to "詳細画面を表示", "/posts/#{post.id}", class: "btn btn-outline-dark " %>
 			</div>

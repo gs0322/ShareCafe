@@ -1,13 +1,13 @@
 <div class="container">
-	<h2 class="new-title text-center">投稿フォーム</h2>
 	<div class="row">
-		<div class="post-new-item col-md-6 offset-md-3">
+		<div class="post-new-item col-md-8 offset-md-2">
+		<h2 class="new-title text-center">投稿フォーム</h2>
 			<%= form_for (@post)  do |f| %><%= render 'partial/error_messages', model: f.object %>
 			<div class="form-group">
 				<%= f.label :title, '店名 30文字以内 ※必須' %><%= f.text_field :title, class: 'form-control' %>
 			</div>
 			<div class="form-group">
-				<%= f.label :text, 'レビュー 200文字以内 ※必須' %><%= f.text_area :text, class: 'form-control', rows:10 %>
+				<%= f.label :text, 'レビュー 200文字以内 ※必須' %><%= f.text_area :text, class: 'form-control', rows:3 %>
 			</div>
 			<div class="form-group">
 				<%= f.label :img, '画像 ※必須' %><%= f.file_field :img, accept: 'image/jpeg,image/gif,image/png,image/jpg'  %>
