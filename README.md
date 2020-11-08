@@ -4,6 +4,8 @@ ShareCafe
 
 * お気に入りのカフェを共有するアプリになっています！
 
+![サンプル画像](FB8B7BDB-7719-4619-A0E5-C1FD290C8A72.jpeg)
+
 ## URL
 https://sharecafe.herokuapp.com/
 
