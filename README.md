@@ -7,7 +7,7 @@ ShareCafe
 ![サンプル画像](FB8B7BDB-7719-4619-A0E5-C1FD290C8A72.jpeg)
 
 ## URL
-https://sharecafe.herokuapp.com/
+http://www.sharecafe.site/
 
 * トップページ右上のログインボタンか中央にあるログインボタンを押し、画面遷移後ゲストユーザーログインボタンを押すとログインすることができます。
 
