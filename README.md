@@ -47,8 +47,8 @@ https://sharecafe.herokuapp.com/
 * MySQL<br>
 * Rubocop<br>
 * RSpec<br>
-
+* AWS (VPC,EC2,RDS,Route 53,ALB)
 ## その他
 * VSCode<br>
-* heroku
+
 
