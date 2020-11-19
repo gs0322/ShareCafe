@@ -32,8 +32,8 @@ http://www.sharecafe.site/
 * コメント機能（Ajax)<br>
 * ページネーション機能(kaminari)<br>
 * Rspec / Rubocop テスト機能<br>
-* モデルの単体テスト
-
+* モデルの単体テスト<br>
+* 統合テスト
 
 ## 使用技術一覧
 * ruby 2.6.3<br>
@@ -47,8 +47,8 @@ http://www.sharecafe.site/
 * MySQL<br>
 * Rubocop<br>
 * RSpec<br>
-* AWS (VPC,EC2,RDS,Route 53,ALB)
+* AWS (VPC/EC2/RDS/Route 53/ALB)
 ## その他
-* VSCode<br>
+* VSCode
 
 
