@@ -49,6 +49,12 @@ https://www.sharecafe.site/
 * RSpec<br>
 * AWS (VPC/EC2/RDS/Route 53/ALB)
 ## その他
+* Git / GitHub
 * VSCode
+* Git チーム開発を意識したissue・プルリクエストの活用
+* Git  issue番号の紐付け
+* AWS ACMにてSSL証明書を発行しSSL化
+* HTTPS接続
+
 
 
