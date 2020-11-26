@@ -47,7 +47,7 @@ https://www.sharecafe.site/
 * MySQL<br>
 * Rubocop<br>
 * RSpec<br>
-* AWS (VPC/EC2/RDS/Route 53/ALB)
+* AWS (VPC/EC2/RDS/Route 53/ALB/ACM)
 * Docker,Docker-compose
 ## その他
 * Git / GitHub
