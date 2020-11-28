@@ -36,8 +36,8 @@ https://www.sharecafe.site/
 * 統合テスト
 
 ## 使用技術一覧
-* ruby 2.6.3<br>
-* rails 5.2.4.4<br>
+* Ruby 2.6.3<br>
+* Rails 5.2.4.4<br>
 * HTML<br>
 * scss<br>
 * Bootstrap<br>
