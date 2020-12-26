@@ -93,3 +93,5 @@ gem 'geocoder'
 
 # 投稿検索機能
 gem 'ransack'
+
+
